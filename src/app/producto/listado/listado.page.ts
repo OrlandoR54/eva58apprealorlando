@@ -32,7 +32,7 @@ export class ListadoPage implements OnInit {
     this.router.navigate(['/registro']);
   }
 
-  buscar(){
-    
+  buscar(nombre:string){
+    this.productoService.getProducto(nombre)
   }
 }
