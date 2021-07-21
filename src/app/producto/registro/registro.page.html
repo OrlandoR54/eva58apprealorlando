@@ -5,5 +5,33 @@
 </ion-header>
 
 <ion-content>
+  <!-- Inputs with labels -->
+  <ion-item>
+    <ion-label position="floating">Nombre producto</ion-label>
+    <ion-input [(ngModel)]="producto.nombre"></ion-input>
+  </ion-item>
 
+  <ion-item>
+    <ion-label position="floating">Tipo</ion-label>
+    <ion-input [(ngModel)]="producto.tipo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Precio</ion-label>
+    <ion-input [(ngModel)]="producto.precio"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Cantidad</ion-label>
+    <ion-input [(ngModel)]="producto.cantidad"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-button color="primary" (click)="guardar()">Guardar</ion-button>
+  </ion-item>
+
+  <app-take-photo source="gallery" (imageSelected)="imageSeleccionada($event)"
+    (uploadFinished)="uploadFinished($event)"></app-take-photo>
+  <app-take-photo source="photo" (imageSelected)="imageSeleccionada($event)" (uploadFinished)="uploadFinished($event)">
+  </app-take-photo>
 </ion-content>
