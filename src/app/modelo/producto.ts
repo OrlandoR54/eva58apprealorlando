@@ -4,4 +4,5 @@ export class Producto {
     precio: string;
     cantidad: number;
     activo: boolean;
+    image:string;
 }

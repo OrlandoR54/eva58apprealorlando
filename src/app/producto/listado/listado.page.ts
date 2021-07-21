@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class ListadoPage implements OnInit {
 
   productos: any;
+  producto: Producto = new Producto();
 
   constructor(private router: Router, private productoService: ProductosService) { }
 
@@ -29,5 +30,9 @@ export class ListadoPage implements OnInit {
 
   crear(){
     this.router.navigate(['/registro']);
+  }
+
+  buscar(){
+    
   }
 }

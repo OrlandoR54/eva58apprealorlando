@@ -28,4 +28,26 @@ export class ProductosService {
         ref => ref.where("activo", "==", true)).valueChanges();
   }
 
+ 
+
+  async getProducto(uid: string) {
+    try {
+      let aux = await this.afs
+        .collection("productos", (ref) => ref.where("nombre", "==", uid))
+        .valueChanges()
+        .toPromise()
+        .then((doc) => {
+          return doc;
+        })
+        .catch((error) => {
+          throw error;
+        });
+      if (aux == null) return {};
+      return aux[0];
+    } catch (error) {
+      console.error("no hay", error);
+      throw error;
+    }
+  }
+
 }

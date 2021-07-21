@@ -12,6 +12,9 @@ export class RegistroPage implements OnInit {
 
   producto: Producto = new Producto();
 
+  imgData: string;
+  imgURL: string;
+
   constructor(private route: ActivatedRoute, private router: Router, private productoService: ProductosService) { 
     route.queryParams.subscribe(params => {
       console.log(params)
@@ -33,4 +36,12 @@ export class RegistroPage implements OnInit {
     this.router.navigate(['listado']);
   }
 
+
+  imageSeleccionada(data: string) {
+    this.imgData = data;
+  }
+
+  uploadFinished(data) {
+    this.producto.image = data;
+  }
 }

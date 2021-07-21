@@ -26,12 +26,15 @@
     <ion-input [(ngModel)]="producto.cantidad"></ion-input>
   </ion-item>
 
+  <app-take-photo source="gallery" (imageSelected)="imageSeleccionada($event)"
+    (uploadFinished)="uploadFinished($event)">
+  </app-take-photo>
+  <app-take-photo source="photo" (imageSelected)="imageSeleccionada($event)" (uploadFinished)="uploadFinished($event)">
+  </app-take-photo>
+
   <ion-item>
     <ion-button color="primary" (click)="guardar()">Guardar</ion-button>
   </ion-item>
 
-  <app-take-photo source="gallery" (imageSelected)="imageSeleccionada($event)"
-    (uploadFinished)="uploadFinished($event)"></app-take-photo>
-  <app-take-photo source="photo" (imageSelected)="imageSeleccionada($event)" (uploadFinished)="uploadFinished($event)">
-  </app-take-photo>
+  
 </ion-content>
